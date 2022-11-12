@@ -174,11 +174,25 @@ console.log(upper_lower("React"));
 console.log(upper_lower("Cs"));
 console.log(upper_lower("JAVAScript"));
 
-//14.
-function vowelOrConsonant(x) {
-  if (x == "a" || x == "e" || x == "i" || x == "o" || x == "u")
-    console.log("Vowel");
-  else console.log("Consonant");
+//14. creating function and two variables which takes vowels and consonants and inserting them to vowels array if it vowel and consonats array if it consonant in ascending array
+function parameterWord(string){
+  let stringArray = string.toLowerCase().split("");
+  let vowels = [];
+  let consonant = [];
+  for (let letter of stringArray) {
+    if (["a", "e", "i", "o", "u"].includes(letter)) vowels.push(letter);
+    else consonant.push(letter);
+  }
+  vowels.sort();
+  consonant.sort();
+  return {
+    vowels,
+    consonant,
+  };
 }
 
-vowelOrConsonant("e");
+let { vowels, consonant } = parameterWord("Hello InfoDevelopers");
+console.log(`Vowels: ${vowels}\n Consonants: ${consonant}`);
+
+
+
